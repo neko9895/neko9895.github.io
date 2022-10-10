@@ -1,0 +1,124 @@
+<!DOCTYPE html>
+<!-- saved from url=(0100)http://mh.jxcfs.com:1540/bpm/rule?wf_num=R_S003_B062&wf_docunid=c3bb96f4097c9042870b5c00ce2b887fc87b -->
+<html class="pixel-ratio-2 retina ios ios-13 ios-13-2-3 ios-gt-12 ios-gt-11 ios-gt-10 ios-gt-9 ios-gt-8 ios-gt-7 ios-gt-6"><head><meta http-equiv="Content-Type" content="text/html; charset=UTF-8"><title>离校不离昌请假</title>
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<link rel="stylesheet" type="text/css" href="./index_files/easyui.css">
+<link rel="stylesheet" type="text/css" href="./index_files/icon.css">
+<link rel="stylesheet" type="text/css" href="./index_files/engine_openform_mobile.css">
+<script type="text/javascript" src="./index_files/zh_CN.js.下载"></script>
+<script type="text/javascript" src="./index_files/jquery.min.js.下载"></script>
+<script type="text/javascript" src="./index_files/jquery.easyui.min.js.下载"></script>
+<script type="text/javascript" src="./index_files/sharefunction.js.下载"></script>
+<script type="text/javascript" src="./index_files/engine_openform.js.下载"></script>
+<script type="text/javascript" src="./index_files/uivalidate.js.下载"></script>
+<script type="text/javascript" src="./index_files/viewgrid.js.下载"></script>
+<script type="text/javascript" src="./index_files/mobile.js.下载"></script>
+<script type="text/javascript" src="./index_files/easyui-lang-zh_CN.js.下载"></script>
+ 
+
+<link rel="stylesheet" href="./index_files/jquery-weui.css">
+<link rel="stylesheet" href="./index_files/weui.min.css">
+<link rel="stylesheet" href="./index_files/common.css">
+<link rel="stylesheet" href="./index_files/style.css">
+<link rel="stylesheet" href="./index_files/log.css">
+<link rel="stylesheet" href="./index_files/selector.css">
+<script type="text/javascript" src="./index_files/jquery-weui.js.下载"></script>
+<script type="text/javascript" src="./index_files/weui.min.js.下载"></script>
+
+<style>
+body{
+    margin: 0px 0px;
+}
+#TopFormTable tr:nth-child(2){
+  display:none;
+}
+#TopFormTable tr:nth-child(3){
+  display:none;
+}
+#TopFormTable tr:nth-child(4){
+  display:none;
+}
+#ApprovalForm{
+  display:none;
+}
+form{
+    margin-top: 55px!important;
+}
+
+</style>
+<script>
+function formonload(){
+
+}
+    
+function formonsubmit(){
+
+    var cuurentNoid = $("#WF_CurrentNodeid").val();
+    if(cuurentNoid=="T10002"){
+    var starttime = $("#LXSJ").val();
+    var endtime = $("#FXSJ").val();
+    if(starttime < "2022-09-30 17:00")
+   {
+        $.messager.alert('提示','离校时间不能小于2022年9月30日17:00！','warning');
+        return false
+   }
+       if(endtime <= starttime){
+        $.messager.alert('提示','返校时间不能早于或等于离校时间！','warning');
+        return false
+    }
+}
+
+}
+function SaveDocumentCallBack(btnAction,rs){
+	//保存成功后的回调函数
+	alert(rs.msg);    
+	try{opener.$('#dg').datagrid('reload');}catch(e){}
+	window.close();
+}
+
+function sts(){
+   var starttime = $("#LXSJ").val();
+   var endtime = $("#FXSJ").val();
+   if(starttime < "2022-09-30 17:00")
+   {
+        $.messager.alert('提示','离校时间不能小于2022年9月30日17:00！','warning');
+        return false
+   }
+
+}
+function timeCheck(){
+   var starttime = $("#LXSJ").val();
+   var endtime = $("#FXSJ").val();
+    if(endtime <= starttime){
+        $.messager.alert('提示','返校时间不能早于或等于离校时间！','warning');
+        return false
+    }
+}
+</script>
+</head>
+<body style="margin: 30px 0px 0px; zoom: 1;" data-weui-theme="light">
+<form action="http://mh.jxcfs.com:1540/bpm/rule?wf_num=R_S003_B062&amp;wf_docunid=c3bb96f4097c9042870b5c00ce2b887fc87b" method="post" name="linkeyform" id="linkeyform" style="margin-top: 46px;">
+<div class="swzx-navbar swzx-navbar-dark">     <div class="swzx-navbar-left"><i class="icon-node"></i></div>     <div class="swzx-navbar-right">        <i class="icon-log" onclick="ShowNewMobileRemark(&#39;3f9b8b600e8be0445e096800c51b768fbaad&#39;,&#39;c3bb96f4097c9042870b5c00ce2b887fc87b&#39;);return false;"></i>     </div>  </div> <div class="weui-cells weui-cells-horizontal"><div class="weui-cell"><div class="weui-cell__hd"><label class="weui-label" id="XM_labelTitle">请假人姓名</label></div><div class="weui-cell__bd"><span id="XM">蒋火龙</span></div></div></div><div class="weui-cells weui-cells-horizontal"><div class="weui-cell"><div class="weui-cell__hd"><label class="weui-label" id="BJ_labelTitle">班级</label></div><div class="weui-cell__bd"><span id="BJ">21本科英语(03)班</span></div></div></div><div class="weui-cells weui-cells-horizontal"><div class="weui-cell"><div class="weui-cell__hd"><label class="weui-label" id="QJRQ_labelTitle">请假日期</label></div><div class="weui-cell__bd"><span id="QJRQ">2022-09-29 13:44</span></div></div></div><div class="weui-cells"><div class="weui-cell weui-cell_access"><div class="weui-cell__hd"><label class="weui-label" id="LXSJ_labelTitle">离校时间</label></div><div class="weui-cell__bd"><span id="LXSJ">2022-09-30 17:00</span></div></div></div><div class="weui-cells"><div class="weui-cell weui-cell_access"><div class="weui-cell__hd"><label class="weui-label" id="_labelTitle">返校时间</label></div><div class="weui-cell__bd"><span id="FXSJ">2022-09-30 21:00</span></div></div></div><div class="weui-cells weui-cells-horizontal"><div class="weui-cell"><div class="weui-cell__hd"><label class="weui-label" id="QJTS_labelTitle">请假天数</label></div><div class="weui-cell__bd"><span id="QJTS">1</span></div></div></div><div class="weui-cells weui-cells-horizontal"><div class="weui-cell"><div class="weui-cell__hd"><label class="weui-label" id="MDD_labelTitle">目的地</label></div><div class="weui-cell__bd"><span id="MDD">八一广场</span></div></div></div><div class="weui-cells weui-cells-horizontal"><div class="weui-cell"><div class="weui-cell__hd"><label class="weui-label" id="BRLXDH_labelTitle">本人联系电话</label></div><div class="weui-cell__bd"><span id="BRLXDH">18720345569</span></div></div></div><div class="weui-cells weui-cells-horizontal"><div class="weui-cell"><div class="weui-cell__hd"><label class="weui-label" id="LXR_labelTitle">目的地联系人</label></div><div class="weui-cell__bd"><span id="LXR"></span></div></div></div><div class="weui-cells weui-cells-horizontal"><div class="weui-cell"><div class="weui-cell__hd"><label class="weui-label" id="LXRDH_labelTitle">联系人电话</label></div><div class="weui-cell__bd"><span id="LXRDH">18720345569</span></div></div></div><div class="weui-cells weui-cells-horizontal"><div class="weui-cell"><div class="weui-cell__hd"><label class="weui-label" id="TXR_labelTitle">同行人</label></div><div class="weui-cell__bd"><span id="TXR">王胡辰</span></div></div></div><div class="weui-cells weui-cells-horizontal"><div class="weui-cell"><div class="weui-cell__hd"><label class="weui-label" id="TXRDH_labelTitle">同行人电话</label></div><div class="weui-cell__bd"><span id="TXRDH">1518270999379</span></div></div></div><div class="weui-cells weui-cells-vertical"><div class="weui-cell"><div class="weui-cell__bd"><label class="weui-label" id="QJYY_labelTitle">请假原因</label><span id="QJYY">找同学</span></div></div></div><p><span class="ue_t" id="remark1" name="remark1" remarktype="辅导员意见" type="remark" isreadflag="0"></span></p><div style="\&quot;padding-left:8px;color:#0066cc\&quot;">同意 </div><div align="right" style="\&quot;padding-right:30px;\&quot;"><font color="\&quot;#339900\&quot;">谭宇琴</font> <font color="\&quot;#999999\&quot;">2022-09-29 16:30</font></div><hr style="\&quot;border:" 1px="" dashed="" #cccccc;="" width:="" 98%;="" height:="" 1px;\"="" align="left"><p></p><p><br></p><p><br></p><!-- FormBody End-->
+
+
+<!-- Workflow Field Begin--><div style="display:none">
+<div id="win"></div>
+<input name="WF_DocUnid" id="WF_DocUnid" value="c3bb96f4097c9042870b5c00ce2b887fc87b">
+<input name="WF_Processid" id="WF_Processid" value="3f9b8b600e8be0445e096800c51b768fbaad">
+<input id="WF_ProcessNumber" value="">
+<input id="WF_UserName" value="2021791015000347">
+<input id="WF_ProcessName" value="离校不离昌请假">
+<input id="WF_CurrentNodeid" value=""><!-- 当前用户所处节点id,空表示无权-->
+<input id="WF_CurrentNodeName" value="">
+<input name="WF_NextNodeid" id="WF_NextNodeid" value=""><!--要提交的目的节点-->
+<input name="WF_NextUserList" id="WF_NextUserList" value=""><!--要提交的目的用户-->
+<input name="WF_Appid" id="WF_Appid" value="S029">
+<input id="WF_NewDocFlag" name="WF_NewDocFlag" value="false"><!-- true表示新文档-->
+<input id="WF_IsFirstNodeFlag" value="false"><!-- true表示是首环节-->
+<input id="WF_NodeProperty" value=""><!-- 在环节中标识的自定义节点参数-->
+<input id="WF_DocStatus" value="ARC" disabled="">
+<input name="WF_Remark" id="WF_Remark" value="">
+</div><!-- Workflow Field End-->
+<br><br></form>
+
+<div id="bar_v4"><div class="topbar"> <div class="leftbar"></div><div class="rightbar"><span></span></div></div></div><table width="100%" height="37px"><tbody><tr><td></td></tr></tbody></table></body></html>
